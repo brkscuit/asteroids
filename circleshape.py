@@ -26,3 +26,10 @@ class CircleShape(pygame.sprite.Sprite):
         
     def get_position(self):
         return self.position
+        
+    def isHit(self, circle):
+        distance = self.position.distance_to(circle.position)
+        if distance < (self.radius + circle.radius):
+            return True
+        else:
+            return False
